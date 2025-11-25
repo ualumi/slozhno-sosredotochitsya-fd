@@ -9,7 +9,15 @@
 }
 
 .header__theme-menu {
+  position: absolute;
+  right: 10px;
+  justify-content: center;
+  top: 75px;
+}
 
+ul.header__theme-menu-list {
+  display: grid;
+  gap: 10px;
 }
 
 .header__theme-menu-item {
@@ -20,12 +28,15 @@
   background: transparent;
   font-family: 'IBM Plex Mono', sans-serif;
   font-size: 18px;
-  line-height: 23.4px;
+  line-height: 18px;
   letter-spacing: 0;
   color: var(--main-color);
   text-transform: lowercase;
-  border: none;
+  border: 1px solid transparent;
+  padding-inline: 13px;
+  
 }
+
 
 .header__theme-menu-button:active {
   border: 1px solid var(--main-color);
@@ -40,12 +51,15 @@ ul {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   background-color: var(--backround-color);
   padding: 0px 10px;
+  background: url(../images/cover-image-dark.png);
+  background-attachment: fixed;
 }
 
 .header {
-  background-color: var(--backround-color);
-  background: url(../images/cover-image-dark.png);
   block-size: 100dvh;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  align-items: center;
 }
 
 .header::before {
@@ -76,6 +90,7 @@ ul {
   color: #DB00FF;
   text-shadow: 4px 4px var(--main-color);
   font-weight: 700;
+  margin: 0;
 }
 
 .text {
@@ -126,11 +141,10 @@ ul {
 }
 
 .footer {
-  block-size: 90dvh;
+  block-size: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-block-start: 35px;
 }
 
 .footer::before {
@@ -138,11 +152,28 @@ ul {
   border-inline-end: 2px solid var(--main-color);
   border-block-start: 2px solid var(--main-color);
   color: #F1B2CE;
-  display: flex;
-  justify-self: end;
+  justify-self: flex-end;
+  align-self: start;
   block-size: 25px;
   inline-size: 25px;
-  margin-block-start: 20px;
   position: absolute;
+  /*margin-block-start: 20px;*/
+}
+
+.footer::after {
+  content: "";
+  border-inline-end: 1px solid var(--main-color);
+  border-block-start: 1px solid var(--main-color);
+  color: #F1B2CE;
+  block-size: 25px;
+  inline-size: 25px;
+  position: absolute;
+  align-self: end;
+  justify-self: start;
+  /*margin-block-start: 20px;*/
+}
+
+.title-footer {
+  text-shadow: 2px 2px var(--main-color);
 }
 
