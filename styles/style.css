@@ -1,5 +1,148 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
-.page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+:root {
+  --backround-color: #000028;
+  --main-color: #FF0070;
+  --text-color: #F1B2CE;
 }
+
+.header__theme-menu {
+
+}
+
+.header__theme-menu-item {
+  list-style-type: none;
+}
+
+.header__theme-menu-button {
+  background: transparent;
+  font-family: 'IBM Plex Mono', sans-serif;
+  font-size: 18px;
+  line-height: 23.4px;
+  letter-spacing: 0;
+  color: var(--main-color);
+  text-transform: lowercase;
+  border: none;
+}
+
+.header__theme-menu-button:active {
+  border: 1px solid var(--main-color);
+}
+
+ul {
+  margin: 0;
+}
+
+.page {
+  margin: 0;
+  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-color: var(--backround-color);
+  padding: 0px 10px;
+}
+
+.header {
+  background-color: var(--backround-color);
+  background: url(../images/cover-image-dark.png);
+  block-size: 100dvh;
+}
+
+.header::before {
+  content: "REC";
+  border-inline-end: 2px solid var(--main-color);
+  border-block-start: 2px solid var(--main-color);
+  color: #F1B2CE;
+  display: flex;
+  justify-self: end;
+  block-size: 25px;
+  inline-size: 25px;
+}
+
+.main {
+  margin: 40px 0px;
+}
+
+.section:not(:first-child){
+  padding-block-start: 50px;
+}
+
+
+.title-h1 {
+  font-family: 'IBM Plex Mono';
+  font-size: 116px;
+  line-height: 83%;
+  letter-spacing: 0;
+  color: #DB00FF;
+  text-shadow: 4px 4px var(--main-color);
+  font-weight: 700;
+}
+
+.text {
+  font-family: 'IBM Plex Mono', sans-serif;
+  font-size: 18px;
+  line-height: 23.4px;
+  letter-spacing: 0;
+}
+
+.caption {
+  color: var(--main-color);
+  font-weight: 700;
+  margin-block-end: 20px;
+  margin-block-start: 0px;
+}
+
+.caption-item {
+  background-color: var(--main-color);
+  color: black;
+  font-weight: 700;
+  margin: 0;
+}
+
+.item {
+  background-color: var(--main-color);
+  color: black;
+  font-weight: 400;
+  margin: 0;
+  margin-block-start: 20px;
+}
+
+.regular {
+  color: var(--text-color);
+  font-weight: 400;
+  margin: 0;
+  margin-block-start: 10px;
+}
+
+.regular:not(:last-child) {
+  margin-block-end: 20px;
+}
+
+.image {
+  display: block;
+  max-width: 100%;
+  margin: 0;
+  margin-block-start: 10px;
+}
+
+.footer {
+  block-size: 90dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block-start: 35px;
+}
+
+.footer::before {
+  content: "";
+  border-inline-end: 2px solid var(--main-color);
+  border-block-start: 2px solid var(--main-color);
+  color: #F1B2CE;
+  display: flex;
+  justify-self: end;
+  block-size: 25px;
+  inline-size: 25px;
+  margin-block-start: 20px;
+  position: absolute;
+}
+
