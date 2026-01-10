@@ -10,4 +10,13 @@
     чем стили в медиазапросе предпочтений пользователя
   */
   --backround-color: #000028;
+  --caption-item-color: #000028;
+  --caption-color:#FF0070; 
+  --main-color: #FF0070;
+  --menu-color: #FF0070;
+  --text-color: #F1B2CE;
+  --accent-color: #DB00FF;
+  --background-img: url('../images/cover-image-dark.png');
+  --border-opacity: 0.4;
+  --border-color: 255, 0, 112;
 }

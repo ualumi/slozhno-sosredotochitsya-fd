@@ -1,14 +1,9 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
+@import url('./globals.css');
+@import url('./variables.css');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
-:root {
-  --backround-color: #000028;
-  --main-color: #FF0070;
-  --text-color: #F1B2CE;
-  --accent-color: #DB00FF;
-  --padding: 10px;
-}
+
 
 .header__theme-menu {
   position: absolute;
@@ -37,7 +32,7 @@ ul.header__theme-menu-list {
   line-height: 18px;
   /* or 100% */
   text-align: center;
-  color: var(--main-color);
+  color: var(--menu-color);
   text-transform: lowercase;
   border: 1px solid transparent;
   padding-inline: 13px;
@@ -48,7 +43,7 @@ ul.header__theme-menu-list {
 
 .header__theme-menu-button_active {
   pointer-events: none;
-  border: 1px solid var(--main-color);
+  border: 1px solid var(--menu-color);
 }
 
 
@@ -56,8 +51,15 @@ ul.header__theme-menu-list {
   border: 1px solid var(--main-color);
 }*/
 
-.header__theme-menu-button:focus, .header__theme-menu-button:active{
-  border-bottom: 1px solid var(--main-color);
+
+
+.header__theme-menu-button:hover {
+  border: 1px solid rgba(var(--border-color), var(--border-opacity));
+}
+
+.header__theme-menu-button:focus, .header__theme-menu-button:focus-visible {
+  border: 1px transparent;
+  border-block-end: 1px solid var(--menu-color);
 }
 
 ul {
@@ -69,7 +71,7 @@ ul {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   background-color: var(--backround-color);
   padding: 0px var(--padding);
-  background: url(../images/cover-image-dark.png);
+  background: var(--background-img);
   background-attachment: fixed;
 }
 
@@ -83,8 +85,8 @@ ul {
 
 .header::before {
   content: "";
-  border-inline-end: 1px solid var(--main-color);
-  border-block-start: 1px solid var(--main-color);
+  border-inline-end: 1px solid var(--menu-color);
+  border-block-start: 1px solid var(--menu-color);
   color: var(--main-color);
   display: flex;
   justify-self: end;
@@ -101,8 +103,8 @@ ul {
 
 .before::after {
   content: "";
-  background-color: var(--main-color);
-  box-shadow: 0px 0px 4px 2px var(--main-color);
+  background-color: var(--menu-color);
+  box-shadow: 0px 0px 4px 2px var(--menu-color);
   border-radius: 100%;
   height: 9px;
   width: 9px;
@@ -125,9 +127,9 @@ ul {
 
 .header::after {
   content: "";
-  border-inline-start: 1px solid var(--main-color);
-  border-block-end: 1px solid var(--main-color);
-  color: #F1B2CE;
+  border-inline-start: 1px solid var(--menu-color);
+  border-block-end: 1px solid var(--menu-color);
+  color: var(--text-color);
   block-size: 25px;
   inline-size: 25px;
   position: relative;
@@ -172,6 +174,16 @@ ul {
   text-shadow: 2px 2px var(--main-color);
 }
 
+.underlined:hover {
+  border-block-end: 1px solid;
+  border-color: var(--text-color);
+  cursor: pointer;
+}
+
+.underlined:focus-visible {
+  border: 1px solid var(--text-color);
+}
+
 .text {
   font-family: 'IBM Plex Mono', sans-serif;
   font-size: 18px;
@@ -180,7 +192,7 @@ ul {
 }
 
 .caption {
-  color: var(--main-color);
+  color: var(--caption-color);
   font-weight: 700;
   margin-block-end: 20px;
   margin-block-start: 0px;
@@ -188,7 +200,7 @@ ul {
 
 .caption-item {
   background-color: var(--main-color);
-  color: black;
+  color: var(--caption-item-color);
   font-weight: 700;
   margin: 0;
   margin-top: 15px;
@@ -224,14 +236,14 @@ ul {
   block-size: 100dvh;
   display: grid;
   align-items: center;
-  justify-content: center;
+  /*justify-content: center;*/
 }
 
 .footer::before {
   content: "";
-  border-inline-end: 1px solid var(--main-color);
-  border-block-start: 1px solid var(--main-color);
-  color: #F1B2CE;
+  border-inline-end: 1px solid var(--menu-color);
+  border-block-start: 1px solid var(--menu-color);
+  color: var(--text-color);
   justify-self: flex-end;
   align-self: start;
   block-size: 25px;
@@ -242,9 +254,9 @@ ul {
 
 .footer::after {
   content: "";
-  border-inline-start: 1px solid var(--main-color);
-  border-block-end: 1px solid var(--main-color);
-  color: #F1B2CE;
+  border-inline-start: 1px solid var(--menu-color);
+  border-block-end: 1px solid var(--menu-color);
+  color: var(--text-color);
   block-size: 25px;
   inline-size: 25px;
   position: relative;
@@ -256,12 +268,13 @@ ul {
 
 .title-footer {
   text-shadow: 2px 2px var(--main-color);
+  justify-self: center;
 }
 
 
 
 
-@media (376px < width < 1024px) {
+@media (768px <= width < 1024px) {
   :root {
     --padding: 20px;
   }
@@ -402,7 +415,7 @@ ul {
     left: 50%;
     transform: translateX(-50%);
     justify-self: start;
-    padding-inline-end: 40px;
+    /*padding-inline-end: 40px;*/
   }
 
   .header__theme-menu-list {
