@@ -1,15 +1,16 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-@import url('./globals.css');
+/*@import url('./globals.css');
 @import url('./variables.css');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-
-
+*/
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 .header__theme-menu {
-  position: absolute;
-  right: 10px;
+  position: relative;
   justify-content: center;
-  top: 75px;
+  top: 50px;
+  align-self: start;
+  justify-self: end;
 }
 
 ul.header__theme-menu-list {
@@ -25,12 +26,11 @@ ul.header__theme-menu-list {
 
 .header__theme-menu-button {
   background: transparent;
-  font-family: 'IBM Plex Mono', sans-serif;
+  font-family: 'IBM Plex Mono', monospace, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 18px;
-  /* or 100% */
   text-align: center;
   color: var(--menu-color);
   text-transform: lowercase;
@@ -45,13 +45,6 @@ ul.header__theme-menu-list {
   pointer-events: none;
   border: 1px solid var(--menu-color);
 }
-
-
-/*.header__theme-menu-button:active {
-  border: 1px solid var(--main-color);
-}*/
-
-
 
 .header__theme-menu-button:hover {
   border: 1px solid rgba(var(--border-color), var(--border-opacity));
@@ -71,19 +64,21 @@ ul {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   background-color: var(--backround-color);
   padding: 0px var(--padding);
-  background: var(--background-img);
+  background-image: var(--background-img);
   background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
 }
 
 .header {
   block-size: 100dvh;
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: min-content 1fr 1fr 1fr;
   align-items: end;
   /*padding-block-start: 4px;*/
 }
 
-.header::before {
+.with-pseudo-elements::before {
   content: "";
   border-inline-end: 1px solid var(--menu-color);
   border-block-start: 1px solid var(--menu-color);
@@ -95,11 +90,47 @@ ul {
   inline-size: 25px;
   top: var(--padding);
   position: relative;
-  
-  /*background: #FF0070;
-  box-shadow: 0px 0px 4px 2px #FF0070;
-  background-size: 9px;*/
 }
+
+.with-pseudo-elements::after {
+  content: "";
+  border-inline-start: 1px solid var(--menu-color);
+  border-block-end: 1px solid var(--menu-color);
+  color: var(--text-color);
+  block-size: 25px;
+  inline-size: 25px;
+  position: relative;
+  align-self: end;
+  justify-self: start;
+  bottom: var(--padding);
+}
+
+/*.header::before {
+  content: "";
+  border-inline-end: 1px solid var(--menu-color);
+  border-block-start: 1px solid var(--menu-color);
+  color: var(--main-color);
+  display: flex;
+  justify-self: end;
+  align-self: start;
+  block-size: 25px;
+  inline-size: 25px;
+  top: var(--padding);
+  position: relative;
+}
+
+.header::after {
+  content: "";
+  border-inline-start: 1px solid var(--menu-color);
+  border-block-end: 1px solid var(--menu-color);
+  color: var(--text-color);
+  block-size: 25px;
+  inline-size: 25px;
+  position: relative;
+  align-self: end;
+  justify-self: start;
+  bottom: var(--padding);
+}*/
 
 .before::after {
   content: "";
@@ -114,7 +145,7 @@ ul {
 }
 
 .before {
-  font-family: 'IBM Plex Mono', sans-serif;
+  font-family: 'IBM Plex Mono', monospace, sans-serif;
   font-size: 18px;
   position: absolute;
   top: var(--padding);
@@ -125,19 +156,7 @@ ul {
   justify-self: end;
 }
 
-.header::after {
-  content: "";
-  border-inline-start: 1px solid var(--menu-color);
-  border-block-end: 1px solid var(--menu-color);
-  color: var(--text-color);
-  block-size: 25px;
-  inline-size: 25px;
-  position: relative;
-  align-self: end;
-  justify-self: start;
-  bottom: var(--padding);
-  /*margin-block-start: 20px;*/
-}
+
 
 .item-header {
   align-self: center;
@@ -155,8 +174,8 @@ ul {
   padding-block-start: 35px;
 }
 
-.title-h1 {
-  font-family: 'IBM Plex Mono';
+.title {
+  font-family: 'IBM Plex Mono', monospace, sans-serif;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 83%;
   letter-spacing: 0;
@@ -164,6 +183,10 @@ ul {
   text-shadow: 4px 4px var(--main-color);
   font-weight: 700;
   margin: 0;
+}
+
+.header .title {
+  margin-block-end: 7px;
 }
 
 /*.header .title-h1 {
@@ -185,7 +208,7 @@ ul {
 }
 
 .text {
-  font-family: 'IBM Plex Mono', sans-serif;
+  font-family: 'IBM Plex Mono', monospace, sans-serif;
   font-size: 18px;
   line-height: 23.4px;
   letter-spacing: 0;
@@ -204,6 +227,10 @@ ul {
   font-weight: 700;
   margin: 0;
   margin-top: 15px;
+}
+
+.header .caption-item {
+  margin-top: 5px;
 }
 
 .item {
@@ -239,7 +266,11 @@ ul {
   /*justify-content: center;*/
 }
 
-.footer::before {
+.footer .with-pseudo-elements::before {
+  margin-block-start: 10px;
+}
+
+/*.footer::before {
   content: "";
   border-inline-end: 1px solid var(--menu-color);
   border-block-start: 1px solid var(--menu-color);
@@ -264,7 +295,7 @@ ul {
   justify-self: start;
   bottom: 10px;
   left: 0px;
-}
+}*/
 
 .title-footer {
   text-shadow: 2px 2px var(--main-color);
@@ -281,7 +312,6 @@ ul {
 
   .header__theme-menu {
     margin-block-start: 115px;
-    margin-inline-end: 10px;
   }
 
   .header__theme-menu-button {
@@ -292,18 +322,21 @@ ul {
     align-self: start;
     justify-self: end;
     width: 364px;
-    margin-block-start: 58px;
   }
 
-  .title-h1 {
+  .header .caption-item {
+    margin-block-start: 50px;
+  }
+
+  .title {
     align-self: center;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem) ;
     
   }
 
-  .header .title-h1 {
-    margin-block-start: 25px;
+  .header .title {
     margin-inline-start: -20px;
+    margin-block-start: 10px;
   }
 
   .section {
@@ -389,14 +422,14 @@ ul {
     justify-self: center;
   }
 
-  .footer::before {
+  /*.footer::before {
     justify-self: flex-end;
     margin-top: 10px;
   }
 
   .footer::after {
     margin-bottom: 10px;
-  }
+  }*/
 }
 
 
@@ -412,10 +445,9 @@ ul {
 
   .header__theme-menu {
     top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    justify-self: start;
-    /*padding-inline-end: 40px;*/
+    margin-top: -25px;
+    justify-self: center;
+    
   }
 
   .header__theme-menu-list {
@@ -428,22 +460,26 @@ ul {
     padding-block-start: 3px;
   }
 
+  .header .caption-item {
+    margin-block-start: 58px;
+  }
+
   .item-header {
     align-self: start;
     justify-self: end;
     width: 491px;
-    margin-block-start: 67px;
+    
   }
 
-  .title-h1 {
+  .title {
     align-self: center;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem) ;
     
   }
 
-  .header .title-h1 {
-    margin-block-start: 25px;
+  .header .title {
     margin-inline-start: -20px;
+    margin-block-start: 10px;
   }
 
   .section {
@@ -542,12 +578,4 @@ ul {
     justify-self: center;
   }
 
-  .footer::before {
-    justify-self: flex-end;
-    margin-top: 10px;
-  }
-
-  .footer::after {
-    margin-bottom: 10px;
-  }
 }
