@@ -97,48 +97,6 @@
     align-self: center;
     margin: 0px 10px;
   }
-  /*html:not(:has(.theme-dark)) .visually-hidden*/
-
-  /*html:has(.theme-light) .visually-hidden {
-    color: transparent;
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    white-space: nowrap;
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden;
-  }*/
-
-  /*html:has(.theme-dark) .visually-hidden {
-    display: block;
-  }*/
-
-  /*html:not(:has(.theme-dark)) .visually-hidden {
-    color: transparent;
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    white-space: nowrap;
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden;
-  }
-    
-  html:has(.theme-dark) .visually-hidden {
-    display: none;
-  }*/
-
-
-  /*.caption {
-    color: var(--caption-color);
-  }*/
-  /* Остальные стили, только при необходимости */
+  
 } 
 

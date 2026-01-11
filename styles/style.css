@@ -234,6 +234,10 @@ ul {
   margin-block-end: 20px;
 }
 
+.text-block:not(:first-child) {
+  padding-block-start: 4.5px;
+}
+
 .image {
   display: block;
   max-width: 100%;
@@ -477,13 +481,19 @@ ul {
  .how-to-concentrate-content {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: min-content min-content;
+    /*grid-template-rows: min-content min-content;*/
+    grid-auto-rows: min-content;
+    grid-auto-flow: row;
     column-gap: 20px;
-    row-gap: 0;
+    row-gap: 20px;
+  }
+
+  .text-block:not(:first-child) {
+    padding-block-start: 0px;
   }
 
   .how-to-concentrate-content .caption-item {
-    grid-row: 1;
+    /*grid-row: 1;*/
     margin-block-start: 0;
   }
 
