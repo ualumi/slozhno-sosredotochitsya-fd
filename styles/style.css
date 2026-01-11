@@ -41,10 +41,7 @@ ul.header__theme-menu-list {
   align-items: center;
 }
 
-.header__theme-menu-button_active {
-  pointer-events: none;
-  border: 1px solid var(--menu-color);
-}
+
 
 .header__theme-menu-button:hover {
   border: 1px solid rgba(var(--border-color), var(--border-opacity));
@@ -53,6 +50,13 @@ ul.header__theme-menu-list {
 .header__theme-menu-button:focus, .header__theme-menu-button:focus-visible {
   border: 1px transparent;
   border-block-end: 1px solid var(--menu-color);
+  outline: none;
+  margin-bottom: -1px;
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+  border: 1px solid var(--menu-color);
 }
 
 ul {
@@ -104,33 +108,6 @@ ul {
   justify-self: start;
   bottom: var(--padding);
 }
-
-/*.header::before {
-  content: "";
-  border-inline-end: 1px solid var(--menu-color);
-  border-block-start: 1px solid var(--menu-color);
-  color: var(--main-color);
-  display: flex;
-  justify-self: end;
-  align-self: start;
-  block-size: 25px;
-  inline-size: 25px;
-  top: var(--padding);
-  position: relative;
-}
-
-.header::after {
-  content: "";
-  border-inline-start: 1px solid var(--menu-color);
-  border-block-end: 1px solid var(--menu-color);
-  color: var(--text-color);
-  block-size: 25px;
-  inline-size: 25px;
-  position: relative;
-  align-self: end;
-  justify-self: start;
-  bottom: var(--padding);
-}*/
 
 .before::after {
   content: "";
@@ -195,16 +172,21 @@ ul {
 
 .underlined {
   text-shadow: 2px 2px var(--main-color);
+  text-decoration: none;
+  display: inline-block;
 }
 
 .underlined:hover {
   border-block-end: 1px solid;
   border-color: var(--text-color);
   cursor: pointer;
+  margin-bottom: -1px;
 }
 
-.underlined:focus-visible {
-  border: 1px solid var(--text-color);
+.underlined:focus-visible, .underlined:focus {
+  outline: 1px solid var(--text-color);
+  outline-offset: -1px;
+    /*border: 1px solid var(--text-color);*/
 }
 
 .text {
@@ -270,32 +252,6 @@ ul {
   margin-block-start: 10px;
 }
 
-/*.footer::before {
-  content: "";
-  border-inline-end: 1px solid var(--menu-color);
-  border-block-start: 1px solid var(--menu-color);
-  color: var(--text-color);
-  justify-self: flex-end;
-  align-self: start;
-  block-size: 25px;
-  inline-size: 25px;
-  position: relative;
-  top: 10px;
-}
-
-.footer::after {
-  content: "";
-  border-inline-start: 1px solid var(--menu-color);
-  border-block-end: 1px solid var(--menu-color);
-  color: var(--text-color);
-  block-size: 25px;
-  inline-size: 25px;
-  position: relative;
-  align-self: end;
-  justify-self: start;
-  bottom: 10px;
-  left: 0px;
-}*/
 
 .title-footer {
   text-shadow: 2px 2px var(--main-color);
