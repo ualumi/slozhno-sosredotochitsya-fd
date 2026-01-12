@@ -19,4 +19,41 @@
   --background-img: url('../images/cover-image-dark.png');
   --border-opacity: 0.4;
   --border-color: 255, 0, 112;
+  --display: block;
+
+  --visually-hidden-color: inherit;
+  --visually-hidden-position: static;
+  --visually-hidden-size: auto;
+  --visually-hidden-margin: 0;
+  --visually-hidden-gap: initial;
+  --visually-hidden-white-space: normal;
+  --visually-hidden-clip-path: none;
+  --visually-hidden-clip: auto;
+  --visually-hidden-overflow: visible;
+
+  /*html.theme-dark .visually-hidden {
+        color: inherit;
+        position: static;
+        width: auto;
+        height: auto;
+        margin: 0;
+        border: initial;
+        padding: initial;
+        white-space: normal;
+        clip-path: none;
+        clip: auto;
+        overflow: visible;
+    }*/
+
+  /*html.theme-dark .before::after {
+    display: var(--display);
+    content: "";
+    background-color: var(--menu-color);
+    box-shadow: 0px 0px 4px 2px var(--menu-color);
+    border-radius: 100%;
+    height: 9px;
+    width: 9px;
+    align-self: center;
+    margin: 0px 10px;
+  }*/
 }

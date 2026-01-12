@@ -14,11 +14,24 @@
   --menu-color: #353430;
   --text-color: #353430;
   --caption-color: #353430;
+  --caption-item-color: #353430;
   --accent-color: #FFC2E6;
   --background-img: url('../images/cover-image-light.png');
   --border-color: 50, 49, 45;
+  --display: none;
 
-  .visually-hidden {
+  --visually-hidden-color: transparent;
+  --visually-hidden-position: absolute;
+  --visually-hidden-size: 1px;
+  --visually-hidden-margin: -1px;
+  --visually-hidden-gap: 0;
+  --visually-hidden-white-space: nowrap;
+  --visually-hidden-clip-path: inset(100%);
+  --visually-hidden-clip: rect(0 0 0 0);
+  --visually-hidden-overflow: hidden;
+
+
+  /*.visually-hidden {
     color: transparent;
     position: absolute;
     width: 1px;
@@ -30,11 +43,11 @@
     clip-path: inset(100%);
     clip: rect(0 0 0 0);
     overflow: hidden;
-  }
+  }*/
 
-  .before::after {
-    display: none;
-  }
+  /*.before::after {
+    display: var(--display);
+  }*/
 
   .caption {
     color: var(--caption-color);
@@ -53,8 +66,19 @@
     --accent-color: #FFC2E6;
     --background-img: url('../images/cover-image-light.png');
     --border-color: 50, 49, 45;
+    --display: none;
+
+    --visually-hidden-color: transparent;
+    --visually-hidden-position: absolute;
+    --visually-hidden-size: 1px;
+    --visually-hidden-margin: -1px;
+    --visually-hidden-gap: 0;
+    --visually-hidden-white-space: nowrap;
+    --visually-hidden-clip-path: inset(100%);
+    --visually-hidden-clip: rect(0 0 0 0);
+    --visually-hidden-overflow: hidden;
   }
-  .visually-hidden {
+  /*.visually-hidden {
     color: transparent;
     position: absolute;
     width: 1px;
@@ -96,7 +120,7 @@
     width: 9px;
     align-self: center;
     margin: 0px 10px;
-  }
+  }*/
   
 } 
 
